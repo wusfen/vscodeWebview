@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    iframe {
+      flex: 1;
+      width: 100%;
+      height: calc(100% - 3em);
+      background: #fff;
+    }
+
+    input {
+      flex: none;
+      width: 100%;
+      height: 2.5em;
+      padding: .5em;
+      background: #ddd;
+    }
+
+    input:focus {
+      background: #f1f1f1;
+    }
+  </style>
+  <input id=input onchange="iframe.src=input.value" placeholder="url" />
+  <iframe id=iframe src="http://localhost:8080" onload="input.value=iframe.src" />
+
+</body>
+
+</html>
